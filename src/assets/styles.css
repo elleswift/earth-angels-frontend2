@@ -1,0 +1,128 @@
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+body {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  background-color: rgb(203, 221, 209);
+}
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: bisque;
+}
+
+li {
+  float: left;
+}
+
+li a {
+  display: block;
+  color: rgb(16, 16, 140);
+  font-style: oblique;
+  font-weight: bold;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: underline;
+  border-radius: 15px;
+}
+
+li a:hover {
+  background-color: black;
+  color: bisque
+}
+
+.container {
+  max-width: 1200px; 
+  margin: 4rem auto;
+}
+
+.form {
+  width: 360px;
+  height: 560px;
+  background-color: bisque;
+  margin-top: 50px;
+  margin-left: 50px;
+  box-shadow: 0 0 50px 0 rgba(0, 0, 0, 0.4), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
+  padding: 20px;
+  padding-top: 40px;
+}
+.g-form {
+  width: 360px;
+  height: 560px;
+  margin-top: 50px;
+  margin-left: 50px;
+  box-shadow: 0 0 50px 0 rgba(0, 0, 0, 0.4), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
+  padding: 20px;
+  padding-top: 40px;
+}
+.add-form input {
+  float: right;
+
+}
+.wishes {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content:space-between;
+  margin: 4rem 0;
+  
+}
+
+.wish {
+  padding: 2rem;
+  margin: 2rem 0;
+  border-radius: 95px;
+  border: solid 3px rgb(29, 217, 208);
+  text-decoration: none;
+  color: rgb(16, 16, 140);
+  width: 400px;
+  height: 300px;
+  box-shadow: 0 20px 8px 0 black; 
+  transition: 0.3s;
+  text-align: center;
+  background-color: bisque;
+} 
+
+
+footer {
+  width: 100%;
+  padding: 2rem;
+  text-align: center;
+  font-weight: bold;
+  font-style:oblique;
+}
+
+.logo-footer-image {
+  width: 100px;
+  height: 100px;
+}
+
+/* .logo-card-image {
+  width: 70px;
+  height: 70px;
+  object-fit: cover;
+} */
+
+.StatusBox {
+margin-right: 130px; 
+size: 150px; 
+/* visibility: hidden; */
+}
+
+
+.field {
+  margin: 10px 0 10px 0;
+  padding: 15px;
+  font-size: 16px;
+  border: 9;
+  font-family: "Roboto", sans-serif;
+  ;
+}
+

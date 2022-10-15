@@ -1,0 +1,105 @@
+import { useState } from 'react';
+import { Navigate, useNavigate } from 'react-router-dom'
+
+const GrantWish = () => {
+  const [form, setForm] = useState({});
+  const navigate = useNavigate
+  const handleForm = (e) => {
+    setForm({ ...form, [e.target.name]: e.target.value });
+  };
+  const GrantWish = () => {
+    fetch(`http://localhost:3001/?Grantorname=`, {
+      method: 'PUT',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(form),
+    })
+      .then((res) => res.json())
+      .then(() => navigate('/wish-list'))
+      .catch((err) => console.error(err))
+      navigate('/wish-list')
+
+      alert('Thank you for helping. Please check your email for follow-up instructions')
+  };
+
+  return (
+    <div className='g-form'>
+      <form className='grant-wish'>
+        <p>
+          Thank you for assisting someone in their time of need. Please complete
+          the short form below for follow up instructions.
+        </p>
+        <br />
+        <input
+          className='field'
+          onChange={(e) => handleForm(e)}
+          type='text'
+          placeholder='Name'
+          name='Grantorname'
+          id='Grantorname'
+        />
+        <input
+          className='field'
+          onChange={(e) => handleForm(e)}
+          type='date'
+          placeholder='Date'
+          name='AcceptDate'
+          id='AcceptDate'
+        />
+        <input
+          className='field'
+          onChange={(e) => handleForm(e)}
+          type='text'
+          placeholder='Contact Info'
+          name='PreferredContact'
+          id='PreferredContact'
+        />
+        <textarea
+          input
+          maxLength={250}
+          className='field'
+          onChange={(e) => handleForm(e)}
+          type='text'
+          placeholder='Max 250 characters'
+          name='Request'
+          id='Request'
+        />
+        {/* <input
+            className='field'
+            onChange={(e) => handleForm(e)}
+            type='text'
+            placeholder='Request'
+            name='Request'
+            id='Request'
+            /> */}
+        {/* <input
+            className='field'
+            onChange={(e) => handleForm(e)}
+            type='text'
+            placeholder='Approved'
+            name='Approved'
+            id='Approved'
+            /> */}
+        <label htmlFor='Status'>
+          <p style={{ fontSize: 12 }}>
+            {' '}
+            By checking this box I certify that the information provided is
+            true.
+          </p>
+        </label>
+        <input
+          name='Status'
+          type='checkbox'
+          onChange={(e) => handleForm(e)}
+          className='StatusBox'
+          id='Status'
+          value={'underReview'}
+        />{' '}
+        <br />
+        <button onClick={(event) => GrantWish(event)}>Submit</button>
+      </form>
+    </div>
+  );
+};
+export default GrantWish;
