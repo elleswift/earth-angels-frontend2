@@ -7,7 +7,7 @@ const AdminWish = () => {
  const location = useLocation()
  const navigate = useNavigate()
 
- const {Name, RequestDate, PreferredContact, Request} = location.state
+ const {Name, RequestDate, PreferredContact, Request, Grantorname, AcceptDate, ContactInfo, Comments} = location.state
  
  const deleteWish = (event) => {
   event.preventDefault()
@@ -29,10 +29,25 @@ const AdminWish = () => {
  const handleForm = (e) => {
   setForm({...form, [e.target.name]: e.target.value})
  }
- 
+ const wishReview = () => {
+  fetch(`http://localhost:3001/update-wish?Name=${Name}`, {
+    method: 'PUT',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify(form),
+  })
+    .then((res) => res.json())
+    .then(() => navigate('/wish-list'))
+    .catch((err) => console.error(err))
+    navigate('/wish-list')
+
+    console.log('Update request sent')
+};
   return (
    <div className='container'>
     <div className='admin-wish'>
+       
       <h3>{Name}</h3>
       <h3>{RequestDate}</h3>
       <h3>{PreferredContact}</h3>
@@ -80,9 +95,20 @@ const AdminWish = () => {
         id="PreferredContact"
         defaultValue={PreferredContact}
         />
+
+      <input
+        onChange={(e) => handleForm(e)}
+        type='text'
+        placeholder='Status'
+        name='Status'
+        id='Status'
+        // defaultValue={Status}
+        />
+
    </form>
   
   <button onClick={deleteWish}>Delete Wish</button>
+  <button onClick={ wishReview}>Update Wish</button>  
     </div>
    </div>
   )

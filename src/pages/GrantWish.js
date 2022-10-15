@@ -4,6 +4,7 @@ import { Navigate, useNavigate } from 'react-router-dom'
 const GrantWish = () => {
   const [form, setForm] = useState({});
   const navigate = useNavigate
+  
   const handleForm = (e) => {
     setForm({ ...form, [e.target.name]: e.target.value });
   };
@@ -19,10 +20,11 @@ const GrantWish = () => {
       .then(() => navigate('/wish-list'))
       .catch((err) => console.error(err))
       navigate('/wish-list')
-
+      
       alert('Thank you for helping. Please check your email for follow-up instructions')
+      
   };
-
+  
   return (
     <div className='g-form'>
       <form className='grant-wish'>
@@ -31,6 +33,7 @@ const GrantWish = () => {
           the short form below for follow up instructions.
         </p>
         <br />
+
         <input
           className='field'
           onChange={(e) => handleForm(e)}
@@ -39,6 +42,7 @@ const GrantWish = () => {
           name='Grantorname'
           id='Grantorname'
         />
+
         <input
           className='field'
           onChange={(e) => handleForm(e)}
@@ -47,6 +51,7 @@ const GrantWish = () => {
           name='AcceptDate'
           id='AcceptDate'
         />
+
         <input
           className='field'
           onChange={(e) => handleForm(e)}
@@ -55,32 +60,16 @@ const GrantWish = () => {
           name='PreferredContact'
           id='PreferredContact'
         />
-        <textarea
-          input
-          maxLength={250}
+
+        <input
           className='field'
           onChange={(e) => handleForm(e)}
           type='text'
-          placeholder='Max 250 characters'
-          name='Request'
-          id='Request'
+          placeholder='Additional Info'
+          name='Comments'
+          id='Comments'
         />
-        {/* <input
-            className='field'
-            onChange={(e) => handleForm(e)}
-            type='text'
-            placeholder='Request'
-            name='Request'
-            id='Request'
-            /> */}
-        {/* <input
-            className='field'
-            onChange={(e) => handleForm(e)}
-            type='text'
-            placeholder='Approved'
-            name='Approved'
-            id='Approved'
-            /> */}
+      
         <label htmlFor='Status'>
           <p style={{ fontSize: 12 }}>
             {' '}
@@ -94,8 +83,8 @@ const GrantWish = () => {
           onChange={(e) => handleForm(e)}
           className='StatusBox'
           id='Status'
-          value={'underReview'}
-        />{' '}
+          value={'Accepted'}
+         />
         <br />
         <button onClick={(event) => GrantWish(event)}>Submit</button>
       </form>

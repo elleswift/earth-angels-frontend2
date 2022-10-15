@@ -81,13 +81,13 @@ li a:hover {
   border-radius: 95px;
   border: solid 3px rgb(29, 217, 208);
   text-decoration: none;
-  color: rgb(16, 16, 140);
+  color: bisque;
   width: 400px;
   height: 300px;
   box-shadow: 0 20px 8px 0 black; 
   transition: 0.3s;
   text-align: center;
-  background-color: bisque;
+  background-color: rgb(64, 134, 124);
 } 
 
 

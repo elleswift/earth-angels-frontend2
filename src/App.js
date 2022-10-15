@@ -1,7 +1,6 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import './assets/styles.css'
 
-
 import Main from './pages/Main'
 import MakeWish from './pages/MakeWish'
 import WishList from './pages/WishList'
@@ -10,6 +9,7 @@ import Footer from './components/Footer'
 import AdminWishes from './components/AdminWishes'
 import GrantWish from './pages/GrantWish'
 import AdminWish from './components/AdminWish'
+
 function App() {
 
   return (
