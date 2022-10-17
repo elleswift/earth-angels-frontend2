@@ -14,7 +14,7 @@ const AdminWish = () => {
 
   console.log('Request to delete sent to API')
 
-  fetch(`http://localhost:3001/remove-wish?Name=${Name}`, {
+  fetch(`${process.env.REACT_APP_API_ENDPOINT}/remove-wish?Name=${Name}`, {
     method: 'DELETE',
     headers: {
       'Content-Type': 'application/json',
@@ -53,7 +53,7 @@ const AdminWish = () => {
       <h3>{PreferredContact}</h3>
       <h4>{Request}</h4>
 
-      <form className='add-form'>
+      <form className='admin-form'>
 
       <label htmlFor=''>Name</label>
       <input
@@ -94,7 +94,7 @@ const AdminWish = () => {
         name='PreferredContact'
         id="PreferredContact"
         defaultValue={PreferredContact}
-        />
+        /> <br />
 
       <input
         onChange={(e) => handleForm(e)}
@@ -102,12 +102,11 @@ const AdminWish = () => {
         placeholder='Status'
         name='Status'
         id='Status'
-        // defaultValue={Status}
+        
         />
-
    </form>
   
-  <button onClick={deleteWish}>Delete Wish</button>
+  <button onClick={deleteWish}>Delete Wish</button> <br />
   <button onClick={ wishReview}>Update Wish</button>  
     </div>
    </div>

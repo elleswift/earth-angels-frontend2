@@ -44,7 +44,7 @@ li a:hover {
   margin: 4rem auto;
 }
 
-.form {
+.m-form {
   width: 360px;
   height: 560px;
   background-color: bisque;
@@ -57,11 +57,13 @@ li a:hover {
 .g-form {
   width: 360px;
   height: 560px;
+  background-color: rgb(229, 254, 237);
   margin-top: 50px;
   margin-left: 50px;
   box-shadow: 0 0 50px 0 rgba(0, 0, 0, 0.4), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
   padding: 20px;
   padding-top: 40px;
+  
 }
 .add-form input {
   float: right;
@@ -123,6 +125,4 @@ size: 150px;
   font-size: 16px;
   border: 9;
   font-family: "Roboto", sans-serif;
-  ;
 }
-

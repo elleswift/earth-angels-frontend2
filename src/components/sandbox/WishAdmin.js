@@ -11,7 +11,7 @@ const WishAdmin = () => {
   const { Name, RequestDate, Request, PreferredContact } = location.state
 
 useEffect(() => {
-  fetch('http://localhost:3001')
+  fetch(`${process.env.REACT_APP_API_ENDPOINT}`)
   .then(res => res.json())
   .then(data => setWishes(data))
   .catch(err => console.error(err))
@@ -37,7 +37,7 @@ const approveWish = (event) => {
   event.preventDefault()
   console.log('Request sent to wish list🤞🏾')
 
-  fetch(`http://localhost:3001?Name=${Name}`, {
+  fetch(`${process.env.REACT_APP_API_ENDPOINT}?Name=${Name}`, {
     method: 'PUT',
     headers: {
       'Content-Type': 'application/json',
@@ -91,7 +91,7 @@ const allWishes = wishes.map((wishes, index) => {
 //   event.preventDefault()
 //   console.log('Request sent to wish list🤞🏾')
 
-//   fetch(`http://localhost:3001?Name=${Name}`, {
+//   fetch(`http://:3001?Name=${Name}`, {
 //     method: 'PUT',
 //     headers: {
 //       'Content-Type': 'application/json',

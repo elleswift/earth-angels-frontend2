@@ -8,7 +8,7 @@ const MakeWish = () => {
   const navigate = useNavigate()  
   
   const addWish = () => {
-    fetch('http://localhost:3001/', {
+    fetch(`${process.env.REACT_APP_API_ENDPOINT}3001/`, {
     method: 'POST',
     headers: {
     'Content-Type': 'application/json',
@@ -35,7 +35,7 @@ const MakeWish = () => {
   };
 
   return (
-    <div className='form'>
+    <div className='m-form'>
       <form className='make-wish'>
     
         <p>
@@ -81,23 +81,7 @@ const MakeWish = () => {
           name='Request'
           id='Request'
         />
-        
-        {/* <input
-          className='field'
-          onChange={(e) => handleForm(e)}
-          type='text'
-          placeholder='Request'
-          name='Request'
-          id='Request'
-          /> */}
-        {/* <input
-          className='field'
-          onChange={(e) => handleForm(e)}
-          type='text'
-          placeholder='Approved'
-          name='Approved'
-          id='Approved'
-          /> */}
+
         <div>
           <p style={{ fontSize: 12, color: 'red', fontWeight: 'bold' }}>
             Maximum characters 250. <br />
@@ -118,7 +102,7 @@ const MakeWish = () => {
           onChange={(e) => handleForm(e)}
           className='StatusBox'
           id='Status'
-          value={'underReview'}
+          value={'Under Review'}
         />{' '}
         <br />
         <button onClick={(event) => addWish(event)}>Submit Wish</button>

@@ -9,7 +9,7 @@ const GrantWish = () => {
     setForm({ ...form, [e.target.name]: e.target.value });
   };
   const GrantWish = () => {
-    fetch(`http://localhost:3001/?Grantorname=`, {
+    fetch(`${process.env.REACT_APP_API_ENDPOINT}/?Grantorname=`, {
       method: 'PUT',
       headers: {
         'Content-Type': 'application/json',
@@ -20,19 +20,20 @@ const GrantWish = () => {
       .then(() => navigate('/wish-list'))
       .catch((err) => console.error(err))
       navigate('/wish-list')
-      
+
       alert('Thank you for helping. Please check your email for follow-up instructions')
       
   };
   
   return (
-    <div className='g-form'>
-      <form className='grant-wish'>
-        <p>
+    <div> <br /><p>
           Thank you for assisting someone in their time of need. Please complete
           the short form below for follow up instructions.
         </p>
         <br />
+      <div className='g-form'>
+        <form className='grant-wish'>
+       
 
         <input
           className='field'
@@ -88,6 +89,7 @@ const GrantWish = () => {
         <br />
         <button onClick={(event) => GrantWish(event)}>Submit</button>
       </form>
+      </div>
     </div>
   );
 };
