@@ -6,7 +6,7 @@ const WishList = () => {
   const [wishes, setWishes] = useState([])
 
 useEffect(() => {
-  fetch(`${process.env.REACT_APP_API_ENDPOINT}`)
+  fetch(`${process.env.REACT_APP_API_ENDPOINT}/`)
   .then(res => res.json())
   .then(data => setWishes(data))
   .catch(err => console.error(err))
