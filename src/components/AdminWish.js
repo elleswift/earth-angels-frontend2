@@ -30,7 +30,7 @@ const AdminWish = () => {
   setForm({...form, [e.target.name]: e.target.value})
  }
  const wishReview = () => {
-  fetch(`http://localhost:3001/update-wish?Name=${Name}`, {
+  fetch(`${process.env.REACT_APP_API_ENDPOINT}/update-wish?Name=${Name}`, {
     method: 'PUT',
     headers: {
       'Content-Type': 'application/json',
@@ -62,8 +62,9 @@ const AdminWish = () => {
         placeholder='Name'
         name='Name'
         id='Name'
-        defaultValue={Name}
+        defaultValue={Name} 
         />
+        <br />
 
       <label htmlFor=''>RequestDate</label>
       <input
@@ -74,6 +75,7 @@ const AdminWish = () => {
         id='RequestDate'
         defaultValue={RequestDate}
         />
+        <br />
 
       <label htmlFor=''>Request</label>
       <input 
@@ -85,6 +87,7 @@ const AdminWish = () => {
         defaultValue={Request}
         onChange={(e) => handleForm(e)}           
         />
+        <br />
 
       <label htmlFor=''>PreferredContact</label>
       <input            
@@ -102,8 +105,8 @@ const AdminWish = () => {
         placeholder='Status'
         name='Status'
         id='Status'
-        
         />
+        <br />
    </form>
   
   <button onClick={deleteWish}>Delete Wish</button> <br />

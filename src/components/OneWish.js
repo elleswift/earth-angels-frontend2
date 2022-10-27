@@ -10,7 +10,7 @@ export const OneWish = ({ wishes }) => {
     <h3>{wishes.RequestDate}</h3>
     <h3>{wishes.PreferredContact}</h3>
     <h3>{wishes.Request}</h3>
-    <button>Grant Wish</button>
+    <button className='grant'>Grant Wish</button>
    </Link> 
   
 

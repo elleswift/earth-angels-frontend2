@@ -1,28 +1,30 @@
 import { useState } from 'react';
-import { Navigate, useNavigate } from 'react-router-dom';
+import {Navigate, useNavigate } from 'react-router-dom';
 
 const MakeWish = () => {
   const [form, setForm] = useState({status:'new'});
   const [count, setCount] = useState('');
+
   const navigate = useNavigate();
 
   const addWish = (event) => {
     event.preventDefault();
     console.log('Wish sending to API 🪄');
 
-    fetch(`${process.env.REACT_APP_API_ENDPOINT}/`, {
+    fetch(process.env.REACT_APP_API_ENDPOINT, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
       },
       body: JSON.stringify(form),
     })
-      .then((res) => res.json())
-      .then((data) => console.log(data))
-      .catch((err) => console.error(err));
-    
+    .then((res) => res.json())
+    .then(() => navigate('/wish-list'))
+    .catch((err) => console.error(err))
+    navigate('/wish-list')
 
-    console.log('Wish sent to API 🪄');
+    alert('Your request is under review')
+    console.log('Wish sent to API 🪄')
     
   };
 
@@ -45,7 +47,7 @@ const MakeWish = () => {
         <input
           className='field'
           onChange={(e) => handleForm(e)}
-          type='text'
+          type='text' required='required'
           placeholder='Name'
           name='Name'
           id='Name'
@@ -53,7 +55,7 @@ const MakeWish = () => {
         <input
           className='field'
           onChange={(e) => handleForm(e)}
-          type='date'
+          type='date' 
           placeholder='RequestDate'
           name='RequestDate'
           id='RequestDate'
@@ -61,7 +63,7 @@ const MakeWish = () => {
         <input
           className='field'
           onChange={(e) => handleForm(e)}
-          type='text'
+          type='text' required='required'
           placeholder='Contact Info'
           name='PreferredContact'
           id='PreferredContact'
@@ -71,7 +73,7 @@ const MakeWish = () => {
           maxLength={250}
           className='field'
           onChange={(e) => handleForm(e)}
-          type='text'
+          type='text' required='required'
           placeholder='Max 250 characters'
           name='Request'
           id='Request'
@@ -83,14 +85,17 @@ const MakeWish = () => {
           </p>
         </div>{' '}
         <br />
-        <label htmlFor='Status'>
-          <p style={{ fontSize: 12 }}>
-            {' '}
-            By checking this box I certify that the information provided is
-            true.
-          </p>
-        </label>
-       
+         <label htmlFor='Status'><p style={{fontSize: 12}}> By checking this box I certify that the information provided is true.</p></label>
+          < input 
+          name='Status' 
+          type='checkbox' 
+          onChange={(e) => handleForm(e)}
+          className='StatusBox' 
+          required={true}
+          id='Status' 
+          value={'underReview'}
+          /> <br /> 
+        
         <button onClick={(event) => addWish(event)}>Submit Wish</button>
       </form>
     </div>
