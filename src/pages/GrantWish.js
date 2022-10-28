@@ -1,14 +1,16 @@
 import { useState } from 'react';
-import { Navigate, useNavigate } from 'react-router-dom'
+import {  useNavigate } from 'react-router-dom'
 
 const GrantWish = () => {
   const [form, setForm] = useState({});
-  const navigate = useNavigate
-  
+
+  const navigate = useNavigate()
+
   const handleForm = (e) => {
     setForm({ ...form, [e.target.name]: e.target.value });
   };
   const GrantWish = () => {
+
     fetch(`${process.env.REACT_APP_API_ENDPOINT}/?Grantorname=`, {
       method: 'PUT',
       headers: {
@@ -21,20 +23,20 @@ const GrantWish = () => {
       .catch((err) => console.error(err))
       navigate('/wish-list')
 
-      alert('Thank you for helping. Please check your email for follow-up instructions')
-      
+      alert('Thank you. We will be in contact soon with follow-up instructions ')
+  
   };
   
   return (
-    <div> <br /><p>
-          Thank you for assisting someone in their time of need. Please complete
-          the short form below for follow up instructions.
-        </p>
+    <div> <br />
+
+         <h3> Thank you for assisting someone in their time of need. Please complete
+          the short form below for follow up instructions.</h3>
+       
         <br />
       <div className='g-form'>
         <form className='grant-wish'>
        
-
         <input
           className='field'
           onChange={(e) => handleForm(e)}

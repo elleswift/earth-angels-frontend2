@@ -2,6 +2,7 @@ import { useState } from 'react';
 import {Navigate, useNavigate } from 'react-router-dom';
 
 const MakeWish = () => {
+
   const [form, setForm] = useState({status:'new'});
   const [count, setCount] = useState('');
 
@@ -23,7 +24,7 @@ const MakeWish = () => {
     .catch((err) => console.error(err))
     navigate('/wish-list')
 
-    alert('Your request is under review')
+    alert('Your request will be reviewed for posting')
     console.log('Wish sent to API 🪄')
     
   };
@@ -93,7 +94,7 @@ const MakeWish = () => {
           className='StatusBox' 
           required={true}
           id='Status' 
-          value={'underReview'}
+          value={'Under Review'}
           /> <br /> 
         
         <button onClick={(event) => addWish(event)}>Submit Wish</button>

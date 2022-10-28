@@ -1,6 +1,5 @@
 import { useState, useEffect } from 'react'
 import { OneWish } from '../components/OneWish'
-// import { halo2 } from '../assets/images/halo2.jpg'
 
 const WishList = () => {
   const [wishes, setWishes] = useState([])
@@ -18,8 +17,7 @@ const allWishes = wishes.filter((item) => item.status !== "new").map((wishes, in
 })
 
   return (
-  <div className='container'>
-    {/* <img src={ halo2 } alt='halo' /> */}
+  <div>
     <h1 style={{color: 'rgb(16, 16, 140)', fontStyle: 'oblique', fontWeight: 'bold'}}>Earth Angels...Grant A Wish</h1>
       <div className='wishes'>{allWishes}</div>
   </div>

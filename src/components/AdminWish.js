@@ -7,7 +7,7 @@ const AdminWish = () => {
  const location = useLocation()
  const navigate = useNavigate()
 
- const {Name, RequestDate, PreferredContact, Request, Grantorname, AcceptDate, ContactInfo, Comments} = location.state
+ const {Name, RequestDate, PreferredContact, Request} = location.state
  
  const deleteWish = (event) => {
   event.preventDefault()

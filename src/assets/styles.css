@@ -2,17 +2,20 @@
 *::after,
 *::before {
   margin: 0;
-  padding: 10;
+  padding: 0;
   box-sizing: inherit;
 }
 
 body {
   font-family: Verdana, Geneva, Tahoma, sans-serif;
   background-color: rgb(203, 221, 209);
-  margin: 10px;
-  padding:25px 
+  margin: 0px;
+  padding:px 
 }
 
+.header {
+  margin-left: 0;
+}
 ul {
   list-style-type: none;
   margin: 0;
@@ -42,13 +45,15 @@ li a:hover {
 }
 
 .container {
-  max-width: 1200px; 
+  max-width: 1100px; 
   margin: 4rem auto;
-  background-image: (halo2);
+  background-image: halo2;
+  display: flex;
 }
 
 .logo2 {
-margin-left: 25px ;
+margin-left: 650px ;
+
 }
 .m-form {
   width: 360px;
@@ -70,6 +75,8 @@ margin-left: 25px ;
   box-shadow: 0 0 50px 0 rgba(0, 0, 0, 0.4), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
   padding: 20px;
   padding-top: 40px;
+  margin-top: 100px;
+  margin-left: 195px;
   
 }
 .add-form input {
@@ -119,19 +126,11 @@ footer {
   height: 100px;
 }
 
-.logo2.png {
-  width: 5px;
-  height: 70px;
-  object-fit: cover;
-  display: flexbox;
-}
-
 .StatusBox {
 margin-right: 130px; 
 size: 150px; 
 /* visibility: hidden; */
 }
-
 
 .field {
   margin: 10px 0 10px 0;
@@ -141,11 +140,12 @@ size: 150px;
   font-family: "Roboto", sans-serif;
 }
 .grant {
-  width: auto;
+  width: 15%;
   position: relative;
-
-  vertical-align: bottom;
+  vertical-align: baseline;
   border-radius: 45%;
   background-color: bisque;
   font-weight: bold;
+  padding-block: 4pt;
+  
 }
