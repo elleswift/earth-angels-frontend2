@@ -9,7 +9,7 @@ import Footer from './components/Footer'
 import AdminWishes from './components/AdminWishes'
 import GrantWish from './pages/GrantWish'
 import AdminWish from './components/AdminWish'
-import About from './components/About'
+
 
 function App() {
 
@@ -24,7 +24,6 @@ function App() {
         <Route path='/grant-wish' element={<GrantWish />} />
         <Route path='/admin-wishes' element={<AdminWishes />} />
         <Route path='/admin-wish' element={<AdminWish />} />
-        <Route path='/About' element={<About />} />
         <Route path='*' element={<h2>Oops....page not found</h2>} />
       </Routes>
       <Footer />

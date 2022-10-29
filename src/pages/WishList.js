@@ -11,7 +11,7 @@ useEffect(() => {
   .catch(err => console.error(err))
 }, [])
 
-const allWishes = wishes.filter((item) => item.status !== "new").map((wishes, index) => {
+const allWishes = wishes.filter((item) => item.Status !== "new").map((wishes, index) => {
   return <OneWish key={wishes._id} wishes={wishes} index={index}/>
 
 })
