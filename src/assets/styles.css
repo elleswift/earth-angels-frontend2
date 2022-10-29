@@ -10,12 +10,9 @@ body {
   font-family: Verdana, Geneva, Tahoma, sans-serif;
   background-color: rgb(203, 221, 209);
   margin: 0px;
-  padding:px 
+  padding:0px
 }
 
-.header {
-  margin-left: 0;
-}
 ul {
   list-style-type: none;
   margin: 0;
@@ -37,6 +34,7 @@ li a {
   padding: 14px 16px;
   text-decoration: underline;
   border-radius: 15px;
+  margin-left: 40px;
 }
 
 li a:hover {
@@ -47,14 +45,28 @@ li a:hover {
 .container {
   max-width: 1100px; 
   margin: 4rem auto;
-  background-image: halo2;
   display: flex;
 }
 
 .logo2 {
-margin-left: 650px ;
+margin-left: 55px ;
+width: 200pxpx;
 
 }
+
+.main {
+  display: flex;
+  margin-left: 80px;
+}
+
+.main-sub {
+ 
+  float: left;
+  margin-left: 80px;
+  width: 1500px;
+
+}
+
 .m-form {
   width: 360px;
   height: 560px;
@@ -70,25 +82,30 @@ margin-left: 650px ;
   width: 360px;
   height: 560px;
   background-color: rgb(229, 254, 237);
-  margin-top: 50px;
-  margin-left: 50px;
   box-shadow: 0 0 50px 0 rgba(0, 0, 0, 0.4), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
   padding: 20px;
-  padding-top: 40px;
-  margin-top: 100px;
-  margin-left: 195px;
+  padding-top: 50px;
+  margin-top: 25px;
+  margin-left: 200px;
   
 }
+
 .add-form input {
   float: right;
-
 }
+
+.g-thankyou {
+  margin-left: 50px;
+  padding-top: 25px;
+  width: 400px;
+  color: rgb(16, 16, 140);
+}
+
 .wishes {
   display: flex;
   flex-wrap: wrap;
   justify-content:space-between;
   margin: 4rem 0;
-  background-image: (halo2);
 }
 
 .wish {
@@ -113,12 +130,13 @@ margin-left: 650px ;
 }
 
 footer {
-  width: 100%;
+  width: 300px;
   padding: 2rem;
   text-align: center;
   font-weight: bold;
   font-style:oblique;
   text-decoration: none;
+  margin-left: 800px;
 }
 
 .logo-footer-image {
@@ -148,4 +166,9 @@ size: 150px;
   font-weight: bold;
   padding-block: 4pt;
   
+}
+
+.embed-video-responsive {
+  margin-left: 500px;
+  padding-top: 30px;
 }
