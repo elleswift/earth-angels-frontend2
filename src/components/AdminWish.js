@@ -7,7 +7,7 @@ const AdminWish = () => {
  const location = useLocation()
  const navigate = useNavigate()
 
- const {Name, RequestDate, PreferredContact, Request, Grantorname, AcceptDate, ContactInfo, Comments, Status} = location.state
+ const {Name, RequestDate, PreferredContact, Request, Status} = location.state
  
  const deleteWish = (event) => {
   event.preventDefault()
@@ -99,12 +99,14 @@ const AdminWish = () => {
         defaultValue={PreferredContact}
         /> <br />
 
-      <input
+      <label htmlFor=''>Status</label>
+      <input 
         onChange={(e) => handleForm(e)}
         type='text'
         placeholder='Status'
         name='Status'
         id='Status'
+        defaultValue={Status}
         />
         <br />
    </form>
